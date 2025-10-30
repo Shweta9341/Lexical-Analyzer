@@ -1,0 +1,111 @@
+1. Project Title:   Lexical Analyzer
+
+2. Name:            Shweta Kamatagi
+
+3. Start date:      28/09/2025
+
+4. End date:        10/10/2025
+
+5. Description:     Lexical Analyzer is a program which converts the stream of individual characters, normally arranged as lines into the
+                    stream of lexical tokens. Tokenization for instance of words and punctuation symbols that make up source code. 
+                    The main purpose/goal of the project is to take in a C file and produce the sequence of tokens that can be used for the 
+                    next stage in compilation. This should also take care of necessary error handling conditions that may occur during 
+                    tokenization.
+
+
+6. Sample Input: 
+           a. Tokennizing
+           
+            #include <stdio.h>
+            #define PI 3.14
+                
+            int main() 
+            {
+                // Variable declarations
+                int a=10, b = 8;
+                a=b+10;
+                float f = 1.2;
+                char grade = 'A';
+                const int LIMIT = 100;
+                printf("No conditions met\n");
+            }
+
+            b. Error handling
+
+            #include <stdio.h>
+            #define PI 3.14
+                
+            int main() 
+            {
+                // Variable declarations
+                int a=10;
+                float f = 1.2g;
+            }
+   
+    
+    
+7. Sample Output: 
+                 
+                 a. Sample output for Tokennizing
+
+                    Keyword: int
+                    Identifier: main
+                    Symbol: (
+                    Symbol: )
+                    Symbol: {
+                    Keyword: int
+                    Identifier: a
+                    Operator: =
+                    Numeric const: 10
+                    Symbol: ,
+                    Identifier: b
+                    Operator: =
+                    Numeric const: 8
+                    Symbol: ;
+                    Identifier: a
+                    Operator: =
+                    Identifier: b
+                    Operator: +
+                    Numeric const: 10
+                    Symbol: ;
+                    Keyword: float
+                    Identifier: f
+                    Operator: =
+                    Float const: 1.2
+                    Symbol: ;
+                    Keyword: char
+                    Identifier: grade
+                    Operator: =
+                    Char const: 'A'
+                    Symbol: ;
+                    Keyword: const
+                    Keyword: int
+                    Identifier: LIMIT
+                    Operator: =
+                    Numeric const: 100
+                    Symbol: ;
+                    Identifier: printf
+                    Symbol: (
+                    Literal: "No conditions met\n"
+                    Symbol: )
+                    Symbol: ;
+                    Symbol: }
+
+
+
+            b. sample output for error handling 
+
+                Keyword: int
+                Identifier: main
+                Symbol: (
+                Symbol: )
+                Symbol: {
+                Keyword: int
+                Identifier: a
+                Operator: =
+                Numeric const: 10
+                Symbol: ;
+                Keyword: float
+                Identifier: f
+                Operator: =
+                try.c:4:11: error: invalid suffix 'g' on floating constant
